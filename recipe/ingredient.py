@@ -2,7 +2,8 @@ from django.db import models
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=64)
-    calories = models.PositiveIntegerField(default=0)    
+    picture = models.ImageField(upload_to="ingredients", default="ingredients/default.jpg")
+    calories = models.PositiveIntegerField(default=0)
     
     @staticmethod
     def get_ingredient_by_name(name):
