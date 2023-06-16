@@ -8,7 +8,11 @@ class Recipe(models.Model):
     total_time = models.PositiveIntegerField(default=0)
     cooking_time = models.PositiveIntegerField(default=0)
     description = models.TextField(default='')
-    ingredients = models.ManyToManyField(Ingredient)
+    ingredients = models.ManyToManyField(
+            Ingredient, 
+            through='RecipeIngredient',
+            through_fields=('recipe','ingredient'),
+        )
     instructions = models.TextField(default='')
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default='')
     date_posted = models.DateField(default=timezone.now)
@@ -27,3 +31,14 @@ class Recipe(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
+
+
+class RecipeIngredient(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
+    amount = models.FloatField()
+    measuring_unit = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f"{self.recipe.name} <-> {self.ingredient.name}: {self.amount} {self.measuring_unit}"

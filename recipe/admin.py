@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .recipe import Recipe
+from .recipe import Recipe, RecipeIngredient
 from .ingredient import Ingredient
 from .review import Review
 
@@ -8,3 +8,4 @@ from .review import Review
 admin.site.register(Recipe)
 admin.site.register(Review)
 admin.site.register(Ingredient)
+admin.site.register(RecipeIngredient)

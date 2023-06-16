@@ -2,8 +2,7 @@ from django.db import models
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=64)
-    calories = models.PositiveIntegerField(default=0)
-    measuring_unit = models.CharField(max_length=64)
+    calories = models.PositiveIntegerField(default=0)    
     
     @staticmethod
     def get_ingredient_by_name(name):
@@ -18,3 +17,4 @@ class Ingredient(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
