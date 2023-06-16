@@ -7,3 +7,6 @@ class Review(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     rating = models.PositiveSmallIntegerField(default=0)
     comment = models.TextField(default='')
+
+    def __str__(self) -> str:
+        return f"reviewed {self.recipe} at {self.rating}"
