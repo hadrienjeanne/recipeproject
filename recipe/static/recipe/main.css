@@ -1,6 +1,6 @@
 
 body {
-    background: #fafafa;
+    background: #FAF0E4;
     color: #333333;
     margin-top: 5rem;
   }
@@ -14,15 +14,15 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #9BCDD2;
   }
   
   .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #707274;
   }
   
   .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #FF8551;
   }
   
   .site-header .navbar-nav .nav-link.active {
@@ -42,7 +42,7 @@ body {
   }
   
   a.article-title:hover {
-    color: #428bca;
+    color: #9BCDD2;
     text-decoration: none;
   }
   
