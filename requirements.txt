@@ -25,3 +25,7 @@ tomlkit==0.11.8
 typing_extensions==4.6.3
 urllib3==2.0.3
 wrapt==1.15.0
+gunicorn==20.1.0
+psycopg2-binary==2.9.3
+wheel==0.37.1
+whitenoise==6.5.0
