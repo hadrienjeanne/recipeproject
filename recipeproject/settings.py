@@ -29,7 +29,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['recipeproject-production.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['.railway.app', '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app/']
 
 
 # Application definition
