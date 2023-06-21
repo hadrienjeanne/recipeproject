@@ -1,7 +1,13 @@
 {% extends "recipe/base.html" %}
 {% block content %}
-    <div>
-        <h1>{{ recipe.name }}</h1>
-        <p> détail </p>
+    <div class="media content-section">
+        <div class="media-body">
+            <h1><a class="article-title" href="#">{{ recipe.name }}</a></h1>
+            Posted by <a class="mr-2" href="{% url 'profile' %}">{{ recipe.author }}</a>
+            <small class="text-muted">{{ recipe.date_posted|date:"F d, Y" }}</small>
+            <hr class="my-4" />
+            <img src="{{ recipe.picture.url }}" alt="{{ recipe.name }}" />
+            <p class="article-content">{{ recipe.description }}</p>
+        </div>
     </div>
 {% endblock content %}
