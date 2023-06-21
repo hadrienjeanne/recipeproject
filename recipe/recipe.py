@@ -4,7 +4,8 @@ from django.utils import timezone
 from .ingredient import Ingredient
 
 class Recipe(models.Model):
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=128)
+    slug = models.CharField(max_length=128, default='')
     total_time = models.PositiveIntegerField(default=0)
     cooking_time = models.PositiveIntegerField(default=0)
     description = models.TextField(default='')
