@@ -7,7 +7,7 @@
                 <a class="mr-2" href="{% url 'profile' %}">{{ recipe.author }}</a>
                 <small class="text-muted">{{ recipe.date_posted|date:"F d, Y" }}</small>
             </div>
-            <h2><a class="article-title" href="#">{{ recipe.name }}</a></h2>
+            <h2><a class="article-title" href="{% url 'recipe-detail' recipe.slug %}">{{ recipe.name }}</a></h2>
             <p class="article-content">{{ recipe.description }}</p>
           </div>
         </article>
