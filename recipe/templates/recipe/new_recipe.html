@@ -1,0 +1,10 @@
+{% extends "recipe/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>New Recipe</h1>
+    <form action="/recipe/new/" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}

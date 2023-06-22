@@ -8,6 +8,7 @@ class Recipe(models.Model):
     slug = models.CharField(max_length=128, default='')
     total_time = models.PositiveIntegerField(default=0)
     cooking_time = models.PositiveIntegerField(default=0)
+    nb_persons = models.PositiveIntegerField(default=0)
     description = models.TextField(default='')
     picture = models.ImageField(upload_to="recipes", default="recipes/default.jpg")
     ingredients = models.ManyToManyField(
